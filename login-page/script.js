@@ -31,3 +31,19 @@ if (loginButton) {
     }
   });
 }
+
+
+
+
+const data = await response.json();
+
+if (response.ok) {
+                // Armazena o token no localStorage
+            localStorage.setItem('token', data.token);
+
+                // Redireciona para a página do dashboard
+                window.location.href = "../dashboard/dashboard.html";
+            } else {
+                // Exibe mensagem de erro
+                alert('Erro ao fazer login: ' + data.msg);
+            }
